@@ -1,11 +1,14 @@
-import csv,os,xlrd
-
-file_names = ['User','Country','Movie','Language','Topic','Director','Directs']
+import csv,os,xlrd,pandas
+def sheets_names():
+    xl = pandas.ExcelFile(excel)
+    names = xl.sheet_names
+    for item in names:
+        file_names.append(item)
+    print 'Sheets names were being parsed'
 
 def csv_from_excel():
-    wb = xlrd.open_workbook('project-data.xls')
+    wb = xlrd.open_workbook(excel)
     for item in file_names:
-        print item
         file_names_str = str(item)
         sh = wb.sheet_by_name(file_names_str)
         current_csv = open(file_names_str+'.csv', 'wb')
@@ -15,8 +18,9 @@ def csv_from_excel():
             wr.writerow(sh.row_values(rownum))
 
         current_csv.close()
+    print 'CSV files were created.'
 
-def RepresentsInt(s):
+def check_int(s):
     try:
         float(s)
         return True
@@ -37,15 +41,18 @@ def populate():
     for row in reader:
         temp = []
         for item in row:
-            if RepresentsInt(item):
+            if check_int(item):
                 temp.append(int(float(item)))
             else:
                 temp.append(str(item))
         output_file.write( 'INSERT INTO  %s \nVALUES (%s);\n' %(item_name,listToStringWithoutBrackets(temp)))
-    # print'File %s.sql is populated.' % item_name
+    print'File %s.sql is populated.' % item_name
 
+excel = 'data.xls'
+file_names  = []
+
+sheets_names()
 csv_from_excel()
-print 'exported data'
 for item in file_names:
     item_name = str(item)
     with open(item_name + '.csv', 'rb') as input_file:
@@ -61,3 +68,4 @@ for item in file_names:
                     populate()
             else:
                 populate()
+print '********Execution Complete********'

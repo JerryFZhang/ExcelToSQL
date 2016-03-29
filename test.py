@@ -1,7 +1,7 @@
-import pandas as pd
-xl = pd.ExcelFile('data.xls')
+import pandas
+xl = pandas.ExcelFile('data.xls')
 
-xl.sheet_names  # see all sheet names
-
-xl.parse(sheet_name)
-print sheet_name
+names = xl.sheet_names  # see all sheet names
+file_names  = []
+for item in names:
+    file_names.append(item)
