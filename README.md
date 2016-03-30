@@ -28,6 +28,13 @@ Put the spreadsheet file in the folder and name it as data.xls, make sure it end
 ```
 python run.py
 ```
+#Todo
+- Add inline comments
+- Code logic optimization
+- Support for xlsx files insted of only xls.
+- Support for other datetypes other thah int and string.
+- Eliminate csv intermidiated generation.
+
 #Author
 zhang96
 
