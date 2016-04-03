@@ -1,9 +1,5 @@
 # ExcelToSQL
-<<<<<<< HEAD
 This a program written in python that take an xls file as a input, generate csv code for each sheet stored, and generate SQL insertion code for a quick databse testing.
-=======
-This a program written in python that take an *.xls file as a input, generate csv code for each sheet stored, and generate SQL insertion code.
->>>>>>> origin/master
 Some of the cool features including 
 
 - checking if the file exist or not and then create or wipe the file if necessary
