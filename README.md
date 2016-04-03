@@ -1,5 +1,9 @@
 # ExcelToSQL
+<<<<<<< HEAD
 This a program written in python that take an xls file as a input, generate csv code for each sheet stored, and generate SQL insertion code for a quick databse testing.
+=======
+This a program written in python that take an *.xls file as a input, generate csv code for each sheet stored, and generate SQL insertion code.
+>>>>>>> origin/master
 Some of the cool features including 
 
 - checking if the file exist or not and then create or wipe the file if necessary
@@ -20,7 +24,7 @@ Install the require modules including:
 - xlrd
 - pandas
 
-Put the spreadsheet file in the folder and name it as data.xls, make sure it ends with xls not xlsx.
+Put the spreadsheet file in the folder and name it as data.xls, make sure it ends with .xls not .xlsx.
 
 - There are two ways to run the file:
   1. Run the file IDLE or other IDEs.
@@ -28,6 +32,14 @@ Put the spreadsheet file in the folder and name it as data.xls, make sure it end
 ```
 python run.py
 ```
+#Todo
+- Add inline comments
+- Code logic optimization
+- Support for *.xlsx files insted of only *.xls files.
+- Support for other datetypes other thah int and string.
+- Eliminate csv intermidiated generation.
+- Option to generate all insertion into a single *.sql file.
+
 #Author
 zhang96
 
